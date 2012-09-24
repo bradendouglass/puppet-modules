@@ -1,4 +1,10 @@
 puppet-manifests
 ================
 
-My puppet manifests for Vagrant
+My puppet modules for Vagrant
+
+
+TODO
+----
+
+# Mysql dump

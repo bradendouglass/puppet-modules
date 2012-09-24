@@ -1,0 +1,24 @@
+# file managed by puppet
+<VirtualHost *:80>
+  DocumentRoot <%= @sitepath %>
+  <% if !hostname.empty? %>ServerName <%= @hostname %>
+  <% end -%>
+
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  <Directory <%= @sitepath %>>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  </Directory>
+
+  ErrorLog <%= scope.lookupvar("apache::params::error_log") %>
+  LogLevel warn
+  CustomLog <%= scope.lookupvar("apache::params::access_log") %> combined
+  #ServerSignature Off
+</VirtualHost>

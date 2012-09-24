@@ -7,6 +7,7 @@ class project(
 				$dbpass = 'socialnetwork_user',
 
 				$sitepath = "/vagrant/src/www",
+				$dbdumppath = "/vagrant/db_snapshot",
 
 				$phpmyadmin = true,
 	){
@@ -21,6 +22,7 @@ class project(
 		dbname => $dbname,
 		dbuser => $dbuser,
 		dbpass => $dbpass,
+		dbdumppath = $dbdumppath,
 	}
 
 	class{"project::web":

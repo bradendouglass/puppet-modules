@@ -6,6 +6,12 @@ class apache($hostname = "localhost", $sitepath = "/var/www") {
 		ensure => installed
 	}
 
+	package { 'apache2.2-common' :
+		ensure => installed,
+		require => Package['apache2']
+	}
+
+
 	service {'apache2' :
 		enable    => true,
 		ensure    => running,
@@ -19,6 +25,12 @@ class apache($hostname = "localhost", $sitepath = "/var/www") {
 		require => Package["apache2"],
 		notify  => Service["apache2"],
 		mode    => 644,
+	}
+
+	exec{"activate mod rewrite":
+		command => "a2enmod rewrite",
+		require => Package['apache2.2-common'],
+		notify  => Service["apache2"],
 	}
 
 }

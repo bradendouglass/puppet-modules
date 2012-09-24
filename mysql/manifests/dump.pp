@@ -1,12 +1,12 @@
-class mysql::dump($dbuser = "user", $dbpass = "secret", $dbname = 'test'){
+class mysql::dump($dbuser = "user", $dbpass = "secret", $dbname = 'test', $dbdumppath = "/vagrant/db_snapshot"){
 
 
-	file{"/vagrant/db_snapshot":
+	file{"${dbdumppath}":
 		ensure => directory
 	}
 
 	exec { 'import-db':
-		onlyif => "test -e /vagrant/db_snapshot/${dbname}_dev.sql",
+		onlyif => "test -e ${$dbdumppath}/${dbname}_dev.sql",
 		command => "/usr/bin/mysql ${dbname} < /vagrant/db_snapshot/${dbname}_dev.sql",
 		require => Exec["create-db"],
 	}

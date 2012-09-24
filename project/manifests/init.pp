@@ -22,7 +22,7 @@ class project(
 		dbname => $dbname,
 		dbuser => $dbuser,
 		dbpass => $dbpass,
-		dbdumppath = $dbdumppath,
+		dbdumppath => $dbdumppath,
 	}
 
 	class{"project::web":

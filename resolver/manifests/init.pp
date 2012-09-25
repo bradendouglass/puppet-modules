@@ -32,4 +32,9 @@ define resolv_conf($domainname = "$domain", $searchpath, $nameservers) {
                 mode    => 644,
                 content => template("resolver/resolv.conf.erb")
         }
+
+        exec{"resolvconf -u":
+        	require => File["/etc/resolvconf/resolv.conf.d/base"]
+
+        }
 }

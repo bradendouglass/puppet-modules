@@ -13,3 +13,6 @@
 [submodule "resolver"]
 	path = resolver
 	url = git@github.com:he8us/puppet-resolver.git
+[submodule "tools"]
+	path = tools
+	url = https://github.com/Xzan/puppet-tools

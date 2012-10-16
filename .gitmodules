@@ -16,3 +16,6 @@
 [submodule "tools"]
 	path = tools
 	url = https://github.com/Xzan/puppet-tools
+[submodule "phpmyadmin"]
+	path = phpmyadmin
+	url = git@github.com:he8us/puppet-phpmyadmin.git

@@ -19,3 +19,9 @@
 [submodule "phpmyadmin"]
 	path = phpmyadmin
 	url = git@github.com:he8us/puppet-phpmyadmin.git
+[submodule "symfony2"]
+	path = symfony2
+	url = git@github.com:he8us/puppet-symfony2.git
+[submodule "silex"]
+	path = silex
+	url = git@github.com:he8us/puppet-silex.git

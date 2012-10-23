@@ -25,3 +25,6 @@
 [submodule "silex"]
 	path = silex
 	url = git@github.com:he8us/puppet-silex.git
+[submodule "fuelphp"]
+	path = fuelphp
+	url = git@github.com:he8us/puppet-fuelphp.git
